@@ -17,26 +17,28 @@ public class SearchGoogle {
 
     @And("Open website Google")
     public void openWebsiteGoogle() throws InterruptedException {
-        driver.get("https://www.google.co.id/");
+        driver.get("https://www.google.com/");
         Thread.sleep(1000);
     }
 
     @And("Located on google website")
     public void locatedOnGoogleWebsite() {
-        driver.findElement(By.name("btnK")).isDisplayed();
+
+        driver.findElement(By.xpath("//a[@href='https://mail.google.com/mail/?authuser=0&ogbl']")).sendKeys(Keys.ENTER);
     }
 
     @When("I search {string}")
     public void iSearch(String searchValue) {
-        driver.findElement(By.name("q")).sendKeys(searchValue, Keys.ENTER);
+
+        //driver.findElement(By.name("q")).sendKeys(searchValue, Keys.ENTER);
     }
 
     @Then("Showing result related with {string}")
     public void showingResultRelatedWith(String arg0) {
-        driver.findElement(By.xpath("//a[@href='https://id.linkedin.com/in/andreasmanik']")).isDisplayed();
-        String urlLinkedin = driver.findElement(By.xpath("//a[@href='https://id.linkedin.com/in/andreasmanik']")).getText();
-        System.out.println(urlLinkedin);
-        driver.close();
-        driver.quit();
+//        driver.findElement(By.xpath("//a[@href='https://id.linkedin.com/in/andreasmanik']")).isDisplayed();
+//        String urlLinkedin = driver.findElement(By.xpath("//a[@href='https://id.linkedin.com/in/andreasmanik']")).getText();
+//        System.out.println(urlLinkedin);
+//        driver.close();
+//        driver.quit();
     }
 }
