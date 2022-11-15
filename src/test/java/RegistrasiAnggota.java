@@ -19,7 +19,8 @@ public class RegistrasiAnggota {
     @And("Masuk kedalam menu Login")
     public void masukKedalamMenuLogin() throws InterruptedException {
         driver.get("https://motif-dev.fifgroup.co.id/#/");
-        Thread.sleep(3000);
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
     }
 
     @When("Masukan Username {string}")
@@ -40,9 +41,12 @@ public class RegistrasiAnggota {
 
     @And("Masuk kedalam menu Registrasi Anggota")
     public void masukKedalamMenuRegistrasiAnggota() throws InterruptedException {
-        driver.get("https://motif-dev.fifgroup.co.id/#/anggota/register_anggota");
-        Thread.sleep(2000);
-        //driver.findElement(By.xpath("//a[@href='#/anggota/register_anggota']")).sendKeys(Keys.ENTER);
+//        driver.get("https://motif-dev.fifgroup.co.id/#/anggota/register_anggota");
+//        Thread.sleep(2000);
+//        WebElement linktext = driver.findElement(By.xpath("//*[contains(text(),'REGISTRASI ANGGOTA')]"));
+//        System.out.println("Ini dapat apa " + linktext.getText());
+//        linktext.sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//*[contains(text(),'REGISTRASI ANGGOTA')]")).click();
     }
 
     @And("Memilih Form")
